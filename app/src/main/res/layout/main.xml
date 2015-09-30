@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="true"
+    android:orientation="horizontal" >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="2"
+        android:orientation="vertical" 
+        android:layout_marginTop="10dip"
+        android:layout_marginLeft="10dip" 
+        android:background="@drawable/border" >
+        
+        <TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/interface_0"
+	        android:gravity="center"
+	        android:layout_marginLeft="5dip"
+	        android:textColor="@color/white"
+	        android:textSize="18dip" 
+	        android:textStyle="bold"/>        
+	        
+        <!-- TRANSMISSION AREA -->
+        
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        	android:layout_width="fill_parent"
+        	android:layout_height="fill_parent"
+        	android:layout_weight="2"
+        	android:orientation="vertical" 
+        	android:layout_marginTop="10dip"
+        	android:layout_marginLeft="10dip" 
+        	android:background="@drawable/border" >
+        	<TableLayout 
+	   	        android:layout_width="fill_parent"
+    			android:layout_height="wrap_content" >
+		    	<TableRow >
+		        	<EditText 
+	                    android:id="@+id/ID0_tx" 
+                    	android:layout_marginLeft="5dip"
+                    	android:layout_marginRight="5dip"
+                    	android:maxLength="8"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:textSize="12dip"/>            
+		        	<TextView 
+	                    android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="5dip"
+                    	android:text="@string/ID" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="10dip"/>
+		        	<CheckBox
+		        	    android:id="@+id/ExtIDTx0"
+                    	android:layout_marginLeft="5dip"
+                    	android:layout_marginRight="0dip"
+                    	android:layout_weight="1"/>            
+		        	<TextView 
+	                    android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="5dip"
+                    	android:text="@string/ExtendedID" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="10dip"/>
+		            <CheckBox
+		        	    android:id="@+id/RTR0"
+                    	android:layout_marginLeft="5dip"
+                    	android:layout_marginRight="0dip"
+                    	android:layout_weight="1"/>            
+		        	<TextView 
+	                    android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="5dip"
+                    	android:text="@string/RTR" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="10dip"/>
+            	</TableRow>
+        	</TableLayout>
+        	<TableLayout    	        
+	            android:layout_width="fill_parent"
+    			android:layout_height="wrap_content" >
+            	<TextView android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="10dip"
+                    	android:layout_marginRight="10dip"
+	                    android:text="@string/data" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="12dip"/>
+        	</TableLayout>
+       	    <LinearLayout
+        	    android:layout_width="fill_parent"
+    			android:layout_height="wrap_content"
+    			android:orientation="horizontal" >
+        	    <TextView 
+        	        android:id="@+id/tx0_frame"
+        	        android:layout_width="0px"
+    				android:layout_height="wrap_content"
+    				android:layout_weight="80"
+    				android:layout_gravity="bottom"
+    				android:gravity="center|bottom"
+    				android:textSize="20dip"
+    				android:layout_marginTop="10dip"
+    				android:layout_marginRight="7dip"
+    				android:textColor="@color/white" />
+        	    <Button 
+        	        android:id="@+id/edit_frame0_button"
+        	        android:layout_width="0px"
+    				android:layout_height="wrap_content"
+    				android:layout_weight="20"
+    				android:text="@string/edit"/>
+       		</LinearLayout>
+	       <Button 
+	            android:id="@+id/tx0_button"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:layout_marginTop="15dip"
+            	android:layout_marginLeft="20dip"
+            	android:layout_marginRight="20dip"
+            	android:text="@string/tx_button" />
+      	</LinearLayout>
+      	
+        <!-- RECEPTION AREA -->
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        	android:layout_width="fill_parent"
+        	android:layout_height="fill_parent"
+        	android:layout_weight="2"
+        	android:orientation="vertical" 
+        	android:layout_marginTop="10dip"
+        	android:layout_marginLeft="10dip" 
+        	android:background="@drawable/border" >        
+        
+	        <TableLayout 
+   	        	android:layout_width="fill_parent"
+    			android:layout_height="wrap_content" >
+		    	<TableRow >
+			        <EditText 
+                    	android:id="@+id/ID0_rx" 
+                    	android:layout_marginLeft="5dip"
+                    	android:layout_marginRight="5dip"
+                    	android:maxLength="8"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:textSize="10dip"/>            
+		        	<TextView 
+	                    android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="5dip"
+                    	android:text="@string/ID" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="10dip"/>
+		            <CheckBox
+		        	    android:id="@+id/ExtIDRx0"
+                    	android:layout_marginLeft="5dip"
+                    	android:layout_marginRight="0dip"
+                    	android:layout_weight="1"/>            
+		        	<TextView 
+	                    android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="5dip"
+                    	android:text="@string/ExtID" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="10dip"/>
+		        	<EditText 
+                    	android:id="@+id/Mask0" 
+                    	android:layout_marginLeft="5dip"
+                    	android:layout_marginRight="5dip"
+                    	android:maxLength="8"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:textSize="10dip"/>            
+		        	<TextView 
+	                    android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="5dip"
+                    	android:text="@string/Mask" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="10dip"/>
+		    	</TableRow>
+        	</TableLayout>
+	
+        	<TableLayout    	        
+	            android:layout_width="fill_parent"
+    			android:layout_height="wrap_content" >
+		    	<TableRow >
+            	<TextView android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="10dip"
+                    	android:layout_marginRight="10dip"
+                    	android:text="@string/data" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="12dip"/>
+            	<LinearLayout 
+            	    android:orientation="horizontal"
+            	    android:layout_height="wrap_content"
+            	    android:layout_width="fill_parent"
+            	    android:layout_gravity="right"
+            	    android:gravity="right">
+            	<TextView android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="10dip"
+                    	android:layout_marginRight="0dip"
+                    	android:text="@string/receivedID" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="12dip"/>
+            	<TextView android:id="@+id/ReceivedID0"
+            	        android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="10dip"
+                    	android:layout_marginRight="10dip"
+                    	android:text="@string/nullID" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="12dip"/>
+            	</LinearLayout>
+            	</TableRow>
+        	</TableLayout>
+	
+        	<TableLayout    	        
+	            android:layout_width="fill_parent"
+    			android:layout_height="wrap_content" >
+            	<TableRow >
+	                <EditText 
+                    	android:id="@+id/rx0_byte0" 
+                    	android:layout_marginLeft="5dip"
+                    	android:layout_marginRight="0dip"
+                    	android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />            
+		        	<EditText 
+	                    android:id="@+id/rx0_byte1" 
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="0dip"
+                    	android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />            
+		        	<EditText 
+	                    android:id="@+id/rx0_byte2" 
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="0dip"
+                    	android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />            
+		        	<EditText 
+	                    android:id="@+id/rx0_byte3" 
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="0dip"
+                    	android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />            
+		        	<EditText 
+	                    android:id="@+id/rx0_byte4" 
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="0dip"
+                    	android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />            
+		        	<EditText 
+	                    android:id="@+id/rx0_byte5" 
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="0dip"
+                    	android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />            
+		        	<EditText 
+	                    android:id="@+id/rx0_byte6" 
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="0dip"
+                    	android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />            
+		        	<EditText 
+	                    android:id="@+id/rx0_byte7" 
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="5dip"
+                    	android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />        
+             	</TableRow>    	        		        		        
+        	</TableLayout>
+
+        	<Button 
+	            android:id="@+id/rx0_button"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:layout_marginTop="15dip"
+            	android:layout_marginLeft="20dip"
+            	android:layout_marginRight="20dip"
+            	android:text="@string/rx_button" />  
+	
+       	</LinearLayout>
+       	
+	</LinearLayout>
+        
+    <!-- Space between both sides of the layout -->
+    
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="2"
+        android:orientation="vertical" 
+        android:layout_marginTop="10dip"
+        android:layout_marginLeft="10dip" 
+        android:background="@drawable/border" >        
+
+        <TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/interface_1"
+	        android:gravity="center"
+	        android:layout_marginLeft="5dip"
+	        android:textColor="@color/white"
+	        android:textSize="18dip" 
+	        android:textStyle="bold"/>
+        	
+        <!-- TRANSMISSION AREA -->
+       	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        	android:layout_width="fill_parent"
+        	android:layout_height="fill_parent"
+        	android:layout_weight="2"
+        	android:orientation="vertical" 
+        	android:layout_marginTop="10dip"
+        	android:layout_marginLeft="10dip" 
+        	android:background="@drawable/border" >
+	        <TableLayout 
+   	        	android:layout_width="fill_parent"
+    			android:layout_height="wrap_content" >
+		    	<TableRow >
+		        	<EditText 
+	                    android:id="@+id/ID1_tx" 
+                    	android:layout_marginLeft="5dip"
+                    	android:layout_marginRight="5dip"
+                    	android:maxLength="8"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:textSize="12dip"/>            
+		        	<TextView 
+	                    android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="5dip"
+                    	android:text="@string/ID" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="10dip"/>
+		        	<CheckBox
+		        	    android:id="@+id/ExtIDTx1"
+                    	android:layout_marginLeft="5dip"
+                    	android:layout_marginRight="0dip"
+                    	android:layout_weight="1"/>            
+		        	<TextView 
+	                    android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="5dip"
+                    	android:text="@string/ExtendedID" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="10dip"/>
+		            <CheckBox
+		        	    android:id="@+id/RTR1"
+                    	android:layout_marginLeft="5dip"
+                    	android:layout_marginRight="0dip"
+                    	android:layout_weight="1"/>            
+		        	<TextView 
+	                    android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="5dip"
+                    	android:text="@string/RTR" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="10dip"/>
+		        	</TableRow>
+        	</TableLayout>
+        	<TableLayout    	        
+	            android:layout_width="fill_parent"
+    			android:layout_height="wrap_content" >
+            	<TextView android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="10dip"
+                    	android:layout_marginRight="10dip"
+                    	android:text="@string/data" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="12dip"/>
+        	</TableLayout>
+       	    <LinearLayout
+        	    android:layout_width="fill_parent"
+    			android:layout_height="wrap_content"
+    			android:orientation="horizontal" >
+        	    <TextView 
+        	        android:id="@+id/tx1_frame"
+        	        android:layout_width="0px"
+    				android:layout_height="wrap_content"
+    				android:layout_weight="80"
+    				android:layout_gravity="bottom"
+    				android:gravity="center|bottom"
+    				android:textSize="20dip"
+    				android:layout_marginTop="10dip"
+    				android:layout_marginRight="7dip"
+    				android:textColor="@color/white" />
+        	    <Button 
+        	        android:id="@+id/edit_frame1_button"
+        	        android:layout_width="0px"
+    				android:layout_height="wrap_content"
+    				android:layout_weight="20"
+    				android:text="@string/edit"/>
+       		</LinearLayout>
+	        <Button 
+	            android:id="@+id/tx1_button"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:layout_marginTop="15dip"
+            	android:layout_marginLeft="20dip"
+            	android:layout_marginRight="20dip"
+            	android:text="@string/tx_button" />
+        </LinearLayout>
+		
+        <!-- RECEPTION AREA -->
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        	android:layout_width="fill_parent"
+        	android:layout_height="fill_parent"
+        	android:layout_weight="2"
+        	android:orientation="vertical" 
+        	android:layout_marginTop="10dip"
+        	android:layout_marginLeft="10dip" 
+        	android:background="@drawable/border" >        
+        
+	        <TableLayout 
+   	        	android:layout_width="fill_parent"
+    			android:layout_height="wrap_content" >
+		    	<TableRow >
+			        <EditText 
+                    	android:id="@+id/ID1_rx" 
+                    	android:layout_marginLeft="5dip"
+                    	android:layout_marginRight="5dip"
+                    	android:maxLength="8"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:textSize="10dip"/>            
+		        	<TextView 
+	                    android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="5dip"
+                    	android:text="@string/ID" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="10dip"/>
+		            <CheckBox
+		        	    android:id="@+id/ExtIDRx1"
+                    	android:layout_marginLeft="5dip"
+                    	android:layout_marginRight="0dip"
+                    	android:layout_weight="1"/>            
+		        	<TextView 
+	                    android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="5dip"
+                    	android:text="@string/ExtID" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="10dip"/>
+		        	<EditText 
+                    	android:id="@+id/Mask1" 
+                    	android:layout_marginLeft="5dip"
+                    	android:layout_marginRight="5dip"
+                    	android:maxLength="8"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:textSize="10dip"/>            
+		        	<TextView 
+	                    android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="5dip"
+                    	android:text="@string/Mask" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="10dip"/>
+		    	</TableRow>
+        	</TableLayout>
+	
+        	<TableLayout    	        
+	            android:layout_width="fill_parent"
+    			android:layout_height="wrap_content" >
+		  <TableRow>
+            	<TextView android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="10dip"
+                    	android:layout_marginRight="10dip"
+                    	android:text="@string/data" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="12dip"/>
+            	<LinearLayout 
+            	    android:orientation="horizontal"
+            	    android:layout_height="wrap_content"
+            	    android:layout_width="fill_parent"
+            	    android:layout_gravity="right"
+            	    android:gravity="right">
+            	    <TextView android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="10dip"
+                    	android:layout_marginRight="0dip"
+                    	android:text="@string/receivedID" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="12dip"/>
+            	   <TextView android:id="@+id/ReceivedID1"
+            	        android:layout_width="wrap_content" 
+                    	android:layout_height="wrap_content"
+                    	android:layout_marginLeft="10dip"
+                    	android:layout_marginRight="10dip"
+                    	android:text="@string/nullID" 
+                    	android:textColor="@color/white"
+                    	android:layout_weight="1"
+                    	android:textSize="12dip"/>
+            	</LinearLayout>
+            </TableRow>
+            </TableLayout>
+	
+        	<TableLayout    	        
+	            android:layout_width="fill_parent"
+    			android:layout_height="wrap_content" >
+            	<TableRow >
+	                <EditText 
+                    	android:id="@+id/rx1_byte0" 
+                    	android:layout_marginLeft="5dip"
+                    	android:layout_marginRight="0dip"
+                    	android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />            
+		        	<EditText 
+	                    android:id="@+id/rx1_byte1" 
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="0dip"
+                    	android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />            
+		        	<EditText 
+	                    android:id="@+id/rx1_byte2" 
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="0dip"
+                    	android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />            
+		        	<EditText 
+	                    android:id="@+id/rx1_byte3" 
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="0dip"
+                    	android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />            
+		        	<EditText 
+	                    android:id="@+id/rx1_byte4" 
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="0dip"
+	                    android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />            
+		        	<EditText 
+	                    android:id="@+id/rx1_byte5" 
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="0dip"
+                    	android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />            
+		        	<EditText 
+	                    android:id="@+id/rx1_byte6" 
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="0dip"
+                    	android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />            
+		        	<EditText 
+	                    android:id="@+id/rx1_byte7" 
+                    	android:layout_marginLeft="0dip"
+                    	android:layout_marginRight="5dip"
+                    	android:maxLength="2"
+                    	android:layout_weight="1"
+                    	android:inputType="textCapCharacters"
+                    	android:enabled="false" />        
+             	</TableRow>    	        		        		        
+        	</TableLayout>
+                	
+        	<Button 
+	            android:id="@+id/rx1_button"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:layout_marginTop="15dip"
+            	android:layout_marginLeft="20dip"
+            	android:layout_marginRight="20dip"
+            	android:text="@string/rx_button" />  
+	
+       	</LinearLayout>
+
+    </LinearLayout>
+    
+</LinearLayout>

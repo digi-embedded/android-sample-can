@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CANSample</string>
+
+    <color name="black">#666666</color>
+    <color name="white">#FFFFFF</color>
+
+    <string name="interface_0">CAN 0 INTERFACE</string>
+    <string name="interface_1">CAN 1 INTERFACE</string>
+    <string name="ID">ID (hex)</string>
+    <string name="ExtendedID">Extended ID</string>
+    <string name="ExtID">Ext ID</string>
+    <string name="RTR">RTR</string>
+    <string name="Mask">Mask (hex)</string>
+    <string name="data">8-BYTE DATA (hex)</string>
+    <string name="receivedID">Received ID (hex): </string>
+    <string name="nullID">--------</string>
+    <string name="tx_button">SEND DATA</string>
+    <string name="rx_button">READ DATA</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="init_byte_val">00</string>
+    <string name="edit">Edit</string>
+    <string name="frame_edit">Frame to send</string>
+
+</resources>
