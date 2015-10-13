@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">CANSample</string>
+    <string name="app_name">CAN Sample</string>
 
     <color name="black">#666666</color>
     <color name="white">#FFFFFF</color>
+    <color name="light_gray">#DDDDDD</color>
 
     <string name="interface_0">CAN 0 INTERFACE</string>
     <string name="interface_1">CAN 1 INTERFACE</string>

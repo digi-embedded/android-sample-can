@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout_root"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/layout_root"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:minWidth="400dp" 
     android:minHeight="180dp"
     android:background="@drawable/border"
     android:gravity="center_vertical|center_horizontal"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    >
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -21,72 +23,88 @@
             android:layout_height="wrap_content"
             android:layout_weight="12"
             android:gravity="center_vertical"
-            android:textSize="16dip"
+            android:textSize="16sp"
             android:maxLength="2"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="LabelFor"
+            android:inputType="text"/>
         <EditText
             android:id="@+id/byte1"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="12"
             android:gravity="center_vertical"
-            android:textSize="16dip"
+            android:textSize="16sp"
             android:maxLength="2"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:inputType="text"
+            tools:ignore="LabelFor"/>
         <EditText
             android:id="@+id/byte2"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="12"
             android:gravity="center_vertical"
-            android:textSize="16dip"
+            android:textSize="16sp"
             android:maxLength="2"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:inputType="text"
+            tools:ignore="LabelFor"/>
         <EditText
             android:id="@+id/byte3"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="12"
             android:gravity="center_vertical"
-            android:textSize="16dip"
+            android:textSize="16sp"
             android:maxLength="2"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:inputType="text"
+            tools:ignore="LabelFor"/>
         <EditText
             android:id="@+id/byte4"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="12"
             android:gravity="center_vertical"
-            android:textSize="16dip"
+            android:textSize="16sp"
             android:maxLength="2"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:inputType="text"
+            tools:ignore="LabelFor"/>
         <EditText
             android:id="@+id/byte5"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="12"
             android:gravity="center_vertical"
-            android:textSize="16dip"
+            android:textSize="16sp"
             android:maxLength="2"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:inputType="text"
+            tools:ignore="LabelFor"/>
         <EditText
             android:id="@+id/byte6"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="12"
             android:gravity="center_vertical"
-            android:textSize="16dip"
+            android:textSize="16sp"
             android:maxLength="2"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:inputType="text"
+            tools:ignore="LabelFor"/>
         <EditText
             android:id="@+id/byte7"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="12"
             android:gravity="center_vertical"
-            android:textSize="16dip"
+            android:textSize="16sp"
             android:maxLength="2"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:inputType="text"
+            tools:ignore="LabelFor"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -94,15 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dip"
         android:orientation="horizontal" >
-        <Button
-            android:id="@+id/cancel_button"
-            android:layout_width="0px"
-            android:layout_height="fill_parent"
-            android:layout_weight="10"
-            android:layout_margin="5dip"
-            android:text="@string/cancel"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+
         <Button
             android:id="@+id/ok_button"
             android:layout_width="0px"
@@ -110,6 +120,16 @@
             android:layout_weight="10"
             android:layout_margin="5dip"
             android:text="@string/ok"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="10"
+            android:layout_margin="5dip"
+            android:text="@string/cancel"
             android:textColor="@color/white"
             android:textStyle="bold" />
     </LinearLayout>
