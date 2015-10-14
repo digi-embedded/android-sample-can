@@ -1,631 +1,683 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			  xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:baselineAligned="true"
-	android:orientation="horizontal"
-			  android:padding="10dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="true"
+    android:orientation="horizontal"
+    android:padding="10dp">
 
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-				  android:orientation="vertical"
-				  android:background="@drawable/border"
-				  android:padding="10dp"
-				  android:layout_weight="1">
-		
-		<TextView
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:text="@string/interface_0"
-			android:gravity="center"
-			android:layout_marginStart="5dip"
-			android:textColor="@color/white"
-			android:textSize="18sp" 
-			android:textStyle="bold"/>
-			
-		<!-- TRANSMISSION AREA -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:layout_weight="1"
-			android:orientation="vertical"
-					  android:background="@drawable/border"
-					  android:layout_marginTop="10dp">
-			<TableLayout 
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginBottom="10dp">
-				<TableRow>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:text="@string/interface_0"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="5dip"
-						android:text="@string/ID"
-						android:textColor="@color/white"
-						android:labelFor="@+id/ID0_tx"/>
+        <!-- TRANSMISSION AREA -->
 
-					<EditText
-						android:id="@+id/ID0_tx" 
-						android:layout_marginStart="5dip"
-						android:layout_marginEnd="5dip"
-						android:maxLength="8"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:textSize="14sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:orientation="vertical">
 
-					<CheckBox
-						android:id="@+id/ExtIDTx0"
-						android:layout_marginStart="5dip"
-						android:layout_marginEnd="0dip"
-						android:layout_weight="1"
-						android:text="@string/ExtendedID"/>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
 
-					<CheckBox
-						android:id="@+id/RTR0"
-						android:layout_marginStart="5dip"
-						android:layout_marginEnd="0dip"
-						android:layout_weight="1"
-						android:text="@string/RTR"/>
-				</TableRow>
-			</TableLayout>
-			<TableLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content" >
-				<TextView android:layout_width="wrap_content" 
-						android:layout_height="wrap_content"
-						android:layout_marginStart="10dip"
-						android:layout_marginEnd="10dip"
-						android:text="@string/data" 
-						android:textColor="@color/white"
-						android:layout_weight="1"
-						android:textSize="12sp"/>
-			</TableLayout>
-			<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal" >
-				<TextView
-					android:id="@+id/tx0_frame"
-					android:layout_width="0px"
-					android:layout_height="wrap_content"
-					android:layout_weight="80"
-					android:layout_gravity="bottom"
-					android:gravity="center|bottom"
-					android:textSize="20sp"
-					android:layout_marginTop="10dip"
-					android:layout_marginEnd="7dip"
-					android:textColor="@color/white" />
-				<Button
-					android:id="@+id/edit_frame0_button"
-					android:layout_width="0px"
-					android:layout_height="wrap_content"
-					android:layout_weight="20"
-					android:text="@string/edit"/>
-			</LinearLayout>
-			<Button
-				android:id="@+id/tx0_button"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="15dip"
-				android:layout_marginStart="20dip"
-				android:layout_marginEnd="20dip"
-				android:text="@string/tx_button" />
-		</LinearLayout>
-		  
-		<!-- RECEPTION AREA -->
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:layout_weight="1"
-			android:orientation="vertical"
-			android:layout_marginTop="10dip"
-					  android:background="@drawable/border" >
-		
-			<TableLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginBottom="10dp">
-				<TableRow>
+                <TableRow>
 
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="5dip"
-						android:text="@string/ID"
-						android:textColor="@color/white"
-						android:labelFor="@+id/ID0_rx"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="0dp"
+                        android:labelFor="@+id/ID0_tx"
+                        android:text="@string/ID"
+                        android:textColor="@color/white" />
 
-					<EditText
-						android:id="@+id/ID0_rx"
-						android:layout_marginStart="5dip"
-						android:layout_marginEnd="5dip"
-						android:maxLength="8"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:textSize="14sp"
-						android:textColor="@drawable/edittext"/>
+                    <EditText
+                        android:id="@+id/ID0_tx"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="8"
+                        android:textSize="14sp" />
 
-					<CheckBox
-						android:id="@+id/ExtIDRx0"
-						android:layout_marginStart="5dip"
-						android:layout_marginEnd="0dip"
-						android:layout_weight="1"
-						android:text="@string/ExtID"/>
+                    <CheckBox
+                        android:id="@+id/ExtIDTx0"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/ExtendedID" />
 
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="5dip"
-						android:text="@string/Mask"
-						android:textColor="@color/white"
-						android:labelFor="@+id/Mask0"/>
+                    <CheckBox
+                        android:id="@+id/RTR0"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/RTR" />
+                </TableRow>
+            </TableLayout>
 
-					<EditText
-						android:id="@+id/Mask0"
-						android:layout_marginStart="5dip"
-						android:layout_marginEnd="5dip"
-						android:maxLength="8"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:textSize="14sp"
-						android:textColor="@drawable/edittext"/>
-				</TableRow>
-			</TableLayout>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-			<TableLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content" >
-				<TableRow >
-					<TextView android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginStart="10dip"
-						android:layout_marginEnd="10dip"
-						android:text="@string/data"
-						android:textColor="@color/white"
-						android:layout_weight="1"
-						android:textSize="12sp"/>
-					<LinearLayout
-						android:orientation="horizontal"
-						android:layout_height="wrap_content"
-						android:layout_width="match_parent"
-						android:layout_gravity="end"
-						android:gravity="end">
-						<TextView android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:layout_marginStart="10dip"
-							android:layout_marginEnd="0dip"
-							android:text="@string/receivedID"
-							android:textColor="@color/white"
-							android:layout_weight="1"
-							/>
-						<TextView android:id="@+id/ReceivedID0"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:layout_marginStart="10dip"
-							android:layout_marginEnd="10dip"
-							android:text="@string/nullID"
-							android:textColor="@color/white"
-							android:layout_weight="1"
-							android:textSize="14sp"/>
-					</LinearLayout>
-				</TableRow>
-			</TableLayout>
-	
-			<TableLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content" >
-				<TableRow >
-					<EditText 
-						android:id="@+id/rx0_byte0" 
-						android:layout_marginStart="5dip"
-						android:layout_marginEnd="0dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-					<EditText 
-						android:id="@+id/rx0_byte1" 
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="0dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-					<EditText 
-						android:id="@+id/rx0_byte2" 
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="0dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-					<EditText 
-						android:id="@+id/rx0_byte3" 
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="0dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-					<EditText 
-						android:id="@+id/rx0_byte4" 
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="0dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-					<EditText 
-						android:id="@+id/rx0_byte5" 
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="0dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-					<EditText 
-						android:id="@+id/rx0_byte6" 
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="0dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-					<EditText 
-						android:id="@+id/rx0_byte7" 
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="5dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-				 </TableRow>
-			</TableLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/data"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </TableLayout>
 
-			<Button 
-				android:id="@+id/rx0_button"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="15dip"
-				android:layout_marginStart="20dip"
-				android:layout_marginEnd="20dip"
-				android:text="@string/rx_button" />
-	
-			</LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-	</LinearLayout>
-		
-	<!-- Space between both sides of the layout -->
-	
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-				  android:orientation="vertical"
-				  android:layout_marginStart="10dip"
-		android:background="@drawable/border"
-				  android:padding="10dp"
-				  android:layout_weight="1">
+                <TextView
+                    android:id="@+id/tx0_frame"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginEnd="7dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="80"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
-		<TextView
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:text="@string/interface_1"
-			android:gravity="center"
-			android:layout_marginStart="5dip"
-			android:textColor="@color/white"
-			android:textSize="18sp"
-			android:textStyle="bold"/>
-		<!-- TRANSMISSION AREA -->
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:layout_weight="1"
-			android:orientation="vertical"
-			android:layout_marginTop="10dip"
-					  android:background="@drawable/border" >
-			<TableLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginBottom="10dp">
-				<TableRow >
+                <Button
+                    android:id="@+id/edit_frame0_button"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:text="@string/edit" />
+            </LinearLayout>
 
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="5dip"
-						android:text="@string/ID"
-						android:textColor="@color/white"
-						android:labelFor="@+id/ID1_tx"/>
+            <Button
+                android:id="@+id/tx0_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/tx_button" />
+        </LinearLayout>
 
-					<EditText
-						android:id="@+id/ID1_tx"
-						android:layout_marginStart="5dip"
-						android:layout_marginEnd="5dip"
-						android:maxLength="8"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:textSize="14sp"/>
+        <!-- RECEPTION AREA -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:orientation="vertical">
 
-					<CheckBox
-						android:id="@+id/ExtIDTx1"
-						android:layout_marginStart="5dip"
-						android:layout_marginEnd="0dip"
-						android:layout_weight="1"
-						android:text="@string/ExtendedID"/>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
 
-					<CheckBox
-						android:id="@+id/RTR1"
-						android:layout_marginStart="5dip"
-						android:layout_marginEnd="0dip"
-						android:layout_weight="1"
-						android:text="@string/RTR"/>
-				</TableRow>
-			</TableLayout>
-			<TableLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content" >
-				<TextView android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginStart="10dip"
-						android:layout_marginEnd="10dip"
-						android:text="@string/data"
-						android:textColor="@color/white"
-						android:layout_weight="1"
-						android:textSize="12sp"/>
-			</TableLayout>
-			<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal" >
-				<TextView
-					android:id="@+id/tx1_frame"
-					android:layout_width="0px"
-					android:layout_height="wrap_content"
-					android:layout_weight="80"
-					android:layout_gravity="bottom"
-					android:gravity="center|bottom"
-					android:textSize="20sp"
-					android:layout_marginTop="10dip"
-					android:layout_marginEnd="7dip"
-					android:textColor="@color/white" />
-				<Button
-					android:id="@+id/edit_frame1_button"
-					android:layout_width="0px"
-					android:layout_height="wrap_content"
-					android:layout_weight="20"
-					android:text="@string/edit"/>
-			</LinearLayout>
-			<Button 
-				android:id="@+id/tx1_button"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="15dip"
-				android:layout_marginStart="20dip"
-				android:layout_marginEnd="20dip"
-				android:text="@string/tx_button" />
-		</LinearLayout>
+                <TableRow>
 
-		<!-- RECEPTION AREA -->
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:layout_weight="1"
-			android:orientation="vertical" 
-			android:layout_marginTop="10dip"
-					  android:background="@drawable/border" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="0dp"
+                        android:labelFor="@+id/ID0_rx"
+                        android:text="@string/ID"
+                        android:textColor="@color/white" />
 
-			<TableLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginBottom="10dp">
-				<TableRow >
+                    <EditText
+                        android:id="@+id/ID0_rx"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="8"
+                        android:textColor="@drawable/edittext"
+                        android:textSize="14sp" />
 
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="5dip"
-						android:text="@string/ID"
-						android:textColor="@color/white"
-						android:labelFor="@+id/ID1_rx"/>
+                    <CheckBox
+                        android:id="@+id/ExtIDRx0"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/ExtID" />
 
-					<EditText
-						android:id="@+id/ID1_rx" 
-						android:layout_marginStart="5dip"
-						android:layout_marginEnd="5dip"
-						android:maxLength="8"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:textSize="14sp"
-						android:textColor="@drawable/edittext"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="0dp"
+                        android:labelFor="@+id/Mask0"
+                        android:text="@string/Mask"
+                        android:textColor="@color/white" />
 
-					<CheckBox
-						android:id="@+id/ExtIDRx1"
-						android:layout_marginStart="5dip"
-						android:layout_marginEnd="0dip"
-						android:layout_weight="1"
-						android:text="@string/ExtID"/>
+                    <EditText
+                        android:id="@+id/Mask0"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="8"
+                        android:textColor="@drawable/edittext"
+                        android:textSize="14sp" />
+                </TableRow>
+            </TableLayout>
 
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="5dip"
-						android:text="@string/Mask"
-						android:textColor="@color/white"
-						android:labelFor="@+id/Mask1"/>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-					<EditText
-						android:id="@+id/Mask1" 
-						android:layout_marginStart="5dip"
-						android:layout_marginEnd="5dip"
-						android:maxLength="8"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:textSize="14sp"
-						android:textColor="@drawable/edittext"/>
-				</TableRow>
-			</TableLayout>
+                <TableRow>
 
-			<TableLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content" >
-				<TableRow>
-					<TextView android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginStart="10dip"
-						android:layout_marginEnd="10dip"
-						android:text="@string/data" 
-						android:textColor="@color/white"
-						android:layout_weight="1"
-						android:textSize="12sp"/>
-					<LinearLayout
-						android:orientation="horizontal"
-						android:layout_height="wrap_content"
-						android:layout_width="match_parent"
-						android:layout_gravity="end"
-						android:gravity="end">
-						<TextView android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:layout_marginStart="10dip"
-							android:layout_marginEnd="0dip"
-							android:text="@string/receivedID"
-							android:textColor="@color/white"
-							android:layout_weight="1"
-							/>
-						<TextView android:id="@+id/ReceivedID1"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:layout_marginStart="10dip"
-							android:layout_marginEnd="10dip"
-							android:text="@string/nullID"
-							android:textColor="@color/white"
-							android:layout_weight="1"
-							android:textSize="14sp"/>
-					</LinearLayout>
-				</TableRow>
-			</TableLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/data"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
 
-			<TableLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content" >
-				<TableRow >
-					<EditText 
-						android:id="@+id/rx1_byte0" 
-						android:layout_marginStart="5dip"
-						android:layout_marginEnd="0dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-					<EditText
-						android:id="@+id/rx1_byte1"
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="0dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-					<EditText 
-						android:id="@+id/rx1_byte2" 
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="0dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-					<EditText 
-						android:id="@+id/rx1_byte3" 
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="0dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-					<EditText 
-						android:id="@+id/rx1_byte4" 
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="0dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-					<EditText 
-						android:id="@+id/rx1_byte5" 
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="0dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-					<EditText 
-						android:id="@+id/rx1_byte6" 
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="0dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-					<EditText 
-						android:id="@+id/rx1_byte7" 
-						android:layout_marginStart="0dip"
-						android:layout_marginEnd="5dip"
-						android:maxLength="2"
-						android:layout_weight="1"
-						android:inputType="textCapCharacters"
-						android:enabled="false"
-						tools:ignore="LabelFor"
-						android:textColor="@drawable/edittext"/>
-				 </TableRow>
-			</TableLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:gravity="end"
+                        android:orientation="horizontal">
 
-			<Button 
-				android:id="@+id/rx1_button"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="15dip"
-				android:layout_marginStart="20dip"
-				android:layout_marginEnd="20dip"
-				android:text="@string/rx_button" />
-		</LinearLayout>
-	</LinearLayout>
-	
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="0dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:text="@string/receivedID"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/ReceivedID0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:text="@string/nullID"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+
+                    <EditText
+                        android:id="@+id/rx0_byte0"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+
+                    <EditText
+                        android:id="@+id/rx0_byte1"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+
+                    <EditText
+                        android:id="@+id/rx0_byte2"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+
+                    <EditText
+                        android:id="@+id/rx0_byte3"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+
+                    <EditText
+                        android:id="@+id/rx0_byte4"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+
+                    <EditText
+                        android:id="@+id/rx0_byte5"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+
+                    <EditText
+                        android:id="@+id/rx0_byte6"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+
+                    <EditText
+                        android:id="@+id/rx0_byte7"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+                </TableRow>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/rx0_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/rx_button" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Space between both sides of the layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:text="@string/interface_1"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <!-- TRANSMISSION AREA -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="0dp"
+                        android:labelFor="@+id/ID1_tx"
+                        android:text="@string/ID"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/ID1_tx"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="8"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/ExtIDTx1"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/ExtendedID" />
+
+                    <CheckBox
+                        android:id="@+id/RTR1"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/RTR" />
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/data"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tx1_frame"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginEnd="7dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="80"
+                    android:gravity="center|bottom"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/edit_frame1_button"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:text="@string/edit" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/tx1_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/tx_button" />
+        </LinearLayout>
+
+        <!-- RECEPTION AREA -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="0dp"
+                        android:labelFor="@+id/ID1_rx"
+                        android:text="@string/ID"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/ID1_rx"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="8"
+                        android:textColor="@drawable/edittext"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/ExtIDRx1"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/ExtID" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="0dp"
+                        android:labelFor="@+id/Mask1"
+                        android:text="@string/Mask"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/Mask1"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="8"
+                        android:textColor="@drawable/edittext"
+                        android:textSize="14sp" />
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/data"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="0dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:text="@string/receivedID"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/ReceivedID1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:text="@string/nullID"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+
+                    <EditText
+                        android:id="@+id/rx1_byte0"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+
+                    <EditText
+                        android:id="@+id/rx1_byte1"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+
+                    <EditText
+                        android:id="@+id/rx1_byte2"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+
+                    <EditText
+                        android:id="@+id/rx1_byte3"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+
+                    <EditText
+                        android:id="@+id/rx1_byte4"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+
+                    <EditText
+                        android:id="@+id/rx1_byte5"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+
+                    <EditText
+                        android:id="@+id/rx1_byte6"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+
+                    <EditText
+                        android:id="@+id/rx1_byte7"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:textColor="@drawable/edittext"
+                        tools:ignore="LabelFor" />
+                </TableRow>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/rx1_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/rx_button" />
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>
