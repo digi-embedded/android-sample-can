@@ -18,10 +18,12 @@ import java.lang.ref.WeakReference;
 import android.app.Activity;
 import android.can.CAN;
 import android.can.CANFrame;
-import android.can.CANListener;
+import android.can.CANManager;
+import android.can.ICANListener;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.NoSuchInterfaceException;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -39,7 +41,7 @@ import android.widget.EditText;
  * <p>For a complete description on the example, refer to the 'README.md' file
  * included in the example directory.</p>
  */
-public class CANSample extends Activity implements CANListener, OnClickListener {
+public class CANSample extends Activity implements ICANListener, OnClickListener {
 
 	// Constants.
 	private final static int ACTION_DRAW_FRAME = 0;
@@ -62,7 +64,8 @@ public class CANSample extends Activity implements CANListener, OnClickListener 
 	private TextView receivedID0, receivedID1;
 	private Button CAN0_read;
 	private Button CAN1_read;
-	CAN mCan0, mCan1;
+
+	private CAN mCan0, mCan1;
 	private CANFrame receivedFrame;
 	private boolean mCan0Reading = false, mCan1Reading = false;
 
@@ -75,7 +78,7 @@ public class CANSample extends Activity implements CANListener, OnClickListener 
 		private final WeakReference<CANSample> wActivity;
 
 		IncomingHandler(CANSample activity) {
-			wActivity = new WeakReference<CANSample>(activity);
+			wActivity = new WeakReference<>(activity);
 		}
 
 		@Override
@@ -92,47 +95,47 @@ public class CANSample extends Activity implements CANListener, OnClickListener 
 					// (bear in mind that both interfaces might have set the same ID).
 					// Besides, when checking the frame's ID, it's necessary to
 					// filter out the flags (higher ID's bits).
-					if (activity.receivedFrame.iface == 0) {
+					if (activity.receivedFrame.getInterfaceNumber() == 0) {
 						activity.rx0_byte0.setText(
-								activity.byteToString(activity.receivedFrame.data[0]));
+								activity.byteToString(activity.receivedFrame.getData()[0]));
 						activity.rx0_byte1.setText(
-								activity.byteToString(activity.receivedFrame.data[1]));
+								activity.byteToString(activity.receivedFrame.getData()[1]));
 						activity.rx0_byte2.setText(
-								activity.byteToString(activity.receivedFrame.data[2]));
+								activity.byteToString(activity.receivedFrame.getData()[2]));
 						activity.rx0_byte3.setText(
-								activity.byteToString(activity.receivedFrame.data[3]));
+								activity.byteToString(activity.receivedFrame.getData()[3]));
 						activity.rx0_byte4.setText(
-								activity.byteToString(activity.receivedFrame.data[4]));
+								activity.byteToString(activity.receivedFrame.getData()[4]));
 						activity.rx0_byte5.setText(
-								activity.byteToString(activity.receivedFrame.data[5]));
+								activity.byteToString(activity.receivedFrame.getData()[5]));
 						activity.rx0_byte6.setText(
-								activity.byteToString(activity.receivedFrame.data[6]));
+								activity.byteToString(activity.receivedFrame.getData()[6]));
 						activity.rx0_byte7.setText(
-								activity.byteToString(activity.receivedFrame.data[7]));
+								activity.byteToString(activity.receivedFrame.getData()[7]));
 						// Filter out flags and show only ID bits.
 						activity.receivedID0.setText(
-								Integer.toHexString(activity.receivedFrame.id & 0x1FFFFFFF));
+								Integer.toHexString(activity.receivedFrame.getId() & 0x1FFFFFFF));
 					}
-					if (activity.receivedFrame.iface == 1) {
+					if (activity.receivedFrame.getInterfaceNumber() == 1) {
 						activity.rx1_byte0.setText(
-								activity.byteToString(activity.receivedFrame.data[0]));
+								activity.byteToString(activity.receivedFrame.getData()[0]));
 						activity.rx1_byte1.setText(
-								activity.byteToString(activity.receivedFrame.data[1]));
+								activity.byteToString(activity.receivedFrame.getData()[1]));
 						activity.rx1_byte2.setText(
-								activity.byteToString(activity.receivedFrame.data[2]));
+								activity.byteToString(activity.receivedFrame.getData()[2]));
 						activity.rx1_byte3.setText(
-								activity.byteToString(activity.receivedFrame.data[3]));
+								activity.byteToString(activity.receivedFrame.getData()[3]));
 						activity.rx1_byte4.setText(
-								activity.byteToString(activity.receivedFrame.data[4]));
+								activity.byteToString(activity.receivedFrame.getData()[4]));
 						activity.rx1_byte5.setText(
-								activity.byteToString(activity.receivedFrame.data[5]));
+								activity.byteToString(activity.receivedFrame.getData()[5]));
 						activity.rx1_byte6.setText(
-								activity.byteToString(activity.receivedFrame.data[6]));
+								activity.byteToString(activity.receivedFrame.getData()[6]));
 						activity.rx1_byte7.setText(
-								activity.byteToString(activity.receivedFrame.data[7]));
+								activity.byteToString(activity.receivedFrame.getData()[7]));
 						// Filter out flags and show only ID bits.
 						activity.receivedID1.setText(
-								Integer.toHexString(activity.receivedFrame.id & 0x1FFFFFFF));
+								Integer.toHexString(activity.receivedFrame.getId() & 0x1FFFFFFF));
 					}
 					break;
 				case ACTION_UPDATE_CAN0_FRAME:
@@ -154,7 +157,7 @@ public class CANSample extends Activity implements CANListener, OnClickListener 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		// Instance the elements from layout
+		// Instantiate the elements from layout.
 		ID0_tx = (EditText)findViewById(R.id.ID0_tx);
 		ExtIDTx0 = (CheckBox)findViewById(R.id.ExtIDTx0);
 		RTR0 = (CheckBox)findViewById(R.id.RTR0);
@@ -225,9 +228,12 @@ public class CANSample extends Activity implements CANListener, OnClickListener 
 		CAN1_send.setOnClickListener(this);
 		CAN1_read.setOnClickListener(this);
 
+		// Get the CAN manager.
+		CANManager canManager = (CANManager) getSystemService(CAN_SERVICE);
+
 		// Initialize CAN objects.
-		mCan0 = new CAN(0);
-		mCan1 = new CAN(1);
+		mCan0 = canManager.createCAN(0);
+		mCan1 = canManager.createCAN(1);
 	}
 
 	@Override
@@ -252,8 +258,12 @@ public class CANSample extends Activity implements CANListener, OnClickListener 
 		mCan1.unsubscribeListener(this);
 
 		// Close CAN interfaces.
-		mCan0.close();
-		mCan1.close();
+		try {
+			mCan0.close();
+			mCan1.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -261,8 +271,12 @@ public class CANSample extends Activity implements CANListener, OnClickListener 
 		super.onResume();
 
 		// Open CAN interfaces.
-		mCan0.open();
-		mCan1.open();
+		try {
+			mCan0.open();
+			mCan1.open();
+		} catch (NoSuchInterfaceException | IOException e) {
+			e.printStackTrace();
+		}
 
 		// Subscribe listeners.
 		mCan0.subscribeListener(this);
@@ -334,10 +348,10 @@ public class CANSample extends Activity implements CANListener, OnClickListener 
 	 * @param RTR RTR checkbox field.
 	 * @param frame The frame to send.
 	 */
-	private void sendFrame (CAN mCan, EditText ID, CheckBox ExtID, CheckBox RTR, String frame) {
+	private void sendFrame(CAN mCan, EditText ID, CheckBox ExtID, CheckBox RTR, String frame) {
 		// Read and check ID.
 		if (!checkData(ID)) {
-			Toast toast = Toast.makeText(getApplicationContext(), "Error: invalid ID. Enter a hexadecimal value.", Toast.LENGTH_LONG);
+			Toast toast = Toast.makeText(getApplicationContext(), "Error: invalid ID. Enter an hexadecimal value.", Toast.LENGTH_LONG);
 			toast.show();
 			return;
 		}
@@ -373,7 +387,7 @@ public class CANSample extends Activity implements CANListener, OnClickListener 
 	 * @param mask Text field containing the mask.
 	 * @param iFace The identifier the CAN interface to read from.
 	 */
-	private void readFrame (CAN mCan, EditText id, CheckBox ExtID, EditText mask, int iFace) {
+	private void readFrame(CAN mCan, EditText id, CheckBox ExtID, EditText mask, int iFace) {
 		if (((iFace == 0) && mCan0Reading)
 				|| ((iFace == 1) && mCan1Reading)) {
 			// Update button.
@@ -462,7 +476,7 @@ public class CANSample extends Activity implements CANListener, OnClickListener 
 	 * @return {@code true} if the text field value only contains hexadecimal
 	 *         characters, {@code false} otherwise.
 	 */
-	private boolean checkData (EditText text) {
+	private boolean checkData(EditText text) {
 		return text.getText().toString().toUpperCase().matches("[0-9A-F]+");
 	}
 
@@ -471,7 +485,7 @@ public class CANSample extends Activity implements CANListener, OnClickListener 
 	 *
 	 * @param iFace CAN interface identifier to clear received data.
 	 */
-	private void clearReadData (int iFace) {
+	private void clearReadData(int iFace) {
 		if (iFace == 0) {
 			rx0_byte0.setText("");
 			rx0_byte1.setText("");
@@ -481,7 +495,7 @@ public class CANSample extends Activity implements CANListener, OnClickListener 
 			rx0_byte5.setText("");
 			rx0_byte6.setText("");
 			rx0_byte7.setText("");
-		receivedID0.setText("--------");
+			receivedID0.setText("--------");
 		} else if (iFace == 1) {
 			rx1_byte0.setText("");
 			rx1_byte1.setText("");
@@ -502,7 +516,7 @@ public class CANSample extends Activity implements CANListener, OnClickListener 
 	 *
 	 * @return Integer value of the text field content.
 	 */
-	private int editTextToInt (EditText text) {
+	private int editTextToInt(EditText text) {
 		// Using long because parsing into int causes a NumberFormatException
 		// if value is greater than 0x80000000.
 		long value = Long.parseLong(text.getText().toString(), 16);
@@ -517,7 +531,7 @@ public class CANSample extends Activity implements CANListener, OnClickListener 
 	 *
 	 * @return A ASCII string representing the hexadecimal value of {@code data}.
 	 */
-	private String byteToString (byte data) {
+	private String byteToString(byte data) {
 		return String.format("%02X", data);
 	}
 }
