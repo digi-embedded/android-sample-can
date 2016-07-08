@@ -65,7 +65,7 @@
                         android:layout_marginEnd="0dp"
                         android:layout_marginStart="5dp"
                         android:layout_weight="1"
-                        android:text="@string/ExtendedID" />
+                        android:text="@string/ExtID" />
 
                     <CheckBox
                         android:id="@+id/RTR0"
@@ -403,7 +403,7 @@
                         android:layout_marginEnd="0dp"
                         android:layout_marginStart="5dp"
                         android:layout_weight="1"
-                        android:text="@string/ExtendedID" />
+                        android:text="@string/ExtID" />
 
                     <CheckBox
                         android:id="@+id/RTR1"

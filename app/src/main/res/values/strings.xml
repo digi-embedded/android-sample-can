@@ -10,7 +10,6 @@
     <string name="interface_0">CAN 0 INTERFACE</string>
     <string name="interface_1">CAN 1 INTERFACE</string>
     <string name="ID">ID (hex)</string>
-    <string name="ExtendedID">Extended ID</string>
     <string name="ExtID">Ext ID</string>
     <string name="RTR">RTR</string>
     <string name="Mask">Mask (hex)</string>
