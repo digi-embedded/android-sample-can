@@ -28,29 +28,10 @@ Make sure the hardware is set up correctly:
 
 Demo run
 --------
+The example is already configured, so all you need to do is to build and
+launch the project.
 
-Before executing the application, the CAN interface bitrate needs to be
-configured. By default, it is set to 500 kbps.
-
-If other bitrate is desired, set it by executing the `init.can.sh` script from
-the device's console with the following command:
-
-    # . /etc/init.can.sh {CAN0_BITRATE} {CAN1_BITRATE}
-
-Use '0' to maintain the default bitrate.
-
-Here are some examples:
-
-    # . /etc/init.can.sh 125000 125000
-    # . /etc/init.can.sh 250000 0
-
-In the first example, both CAN interfaces are set to 125K baud. In the second
-example only CAN0 bitrate is changed, CAN1 uses the default baud rate.
-
-Once bitrates are properly set, launch the application. CAN interfaces use the
-configured baud rate. Baud rate is persistent through device reboots, CAN
-interfaces are configured with the latest baud rate setup by the `init.can.sh`
-script.
+By default, both CAN interfaces run at a bitrate of 500kbps.
 
 The application displays an area for each CAN interface available in the device.
 Within each area, transmission and reception functionality are clearly
