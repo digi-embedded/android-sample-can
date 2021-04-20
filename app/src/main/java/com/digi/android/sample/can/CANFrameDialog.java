@@ -1,5 +1,5 @@
-/**
- * Copyright (c) 2014-2016, Digi International Inc. <support@digi.com>
+/*
+ * Copyright (c) 2014-2021, Digi International Inc. <support@digi.com>
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -39,15 +39,15 @@ public class CANFrameDialog extends Dialog implements TextWatcher {
 
 	// Variables.
 	private String data;
-	
+
 	private Button okButton;
 
 	private EditText[] texts;
-	
-	private CANSampleActivity sampleActivity;
-	
-	private int interfaceNumber;
-	
+
+	private final CANSampleActivity sampleActivity;
+
+	private final int interfaceNumber;
+
 	/**
 	 * Class constructor. Instances a new object of type CAN Frame Dialog
 	 * with the given parameters.
@@ -88,19 +88,19 @@ public class CANFrameDialog extends Dialog implements TextWatcher {
 	 */
 	private void initializeUIComponents() {
 		texts = new EditText[]{
-				(EditText) findViewById(R.id.byte0),
-				(EditText) findViewById(R.id.byte1),
-				(EditText) findViewById(R.id.byte2),
-				(EditText) findViewById(R.id.byte3),
-				(EditText) findViewById(R.id.byte4),
-				(EditText) findViewById(R.id.byte5),
-				(EditText) findViewById(R.id.byte6),
-				(EditText) findViewById(R.id.byte7)};
+				findViewById(R.id.byte0),
+				findViewById(R.id.byte1),
+				findViewById(R.id.byte2),
+				findViewById(R.id.byte3),
+				findViewById(R.id.byte4),
+				findViewById(R.id.byte5),
+				findViewById(R.id.byte6),
+				findViewById(R.id.byte7)};
 
 		for (EditText t: texts)
 			t.addTextChangedListener(this);
-		
-		okButton = (Button)findViewById(R.id.ok_button);
+
+		okButton = findViewById(R.id.ok_button);
 		okButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -109,7 +109,7 @@ public class CANFrameDialog extends Dialog implements TextWatcher {
 			}
 		});
 
-		Button cancelButton = (Button) findViewById(R.id.cancel_button);
+		Button cancelButton = findViewById(R.id.cancel_button);
 		cancelButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -117,7 +117,7 @@ public class CANFrameDialog extends Dialog implements TextWatcher {
 			}
 		});
 	}
-	
+
 	/**
 	 * Fills all the dialog byte fields with the given frame.
 	 */
@@ -126,14 +126,14 @@ public class CANFrameDialog extends Dialog implements TextWatcher {
 		for (int i = 0; i < texts.length; i ++)
 			texts[i].setText(HexUtils.byteArrayToHexString(new byte[]{bytes[i]}));
 	}
-	
+
 	/**
 	 * Updates and stores the frame with the text field values.
 	 */
 	private void updateFrame() {
 		// First validate.
-		for (int i = 0; i < texts.length; i ++) {
-			if (!Pattern.matches(HEX_PATTERN, texts[i].getText())) {
+		for (EditText text : texts) {
+			if (!Pattern.matches(HEX_PATTERN, text.getText())) {
 				Toast.makeText(sampleActivity, "Frame has invalid characters", Toast.LENGTH_SHORT).show();
 				okButton.setEnabled(false);
 				return;
@@ -143,10 +143,10 @@ public class CANFrameDialog extends Dialog implements TextWatcher {
 		// Build the frame.
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < texts.length; i++) {
-			String fieldText = texts[i].getText().toString();
+			StringBuilder fieldText = new StringBuilder(texts[i].getText().toString());
 			int diff = 2 - fieldText.length();
 			for (int j = 0; j < diff; j++)
-				fieldText = "0" + fieldText;
+				fieldText.insert(0, "0");
 			sb.append(fieldText);
 			if (i < 7)
 				sb.append(" ");

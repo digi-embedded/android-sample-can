@@ -1,5 +1,5 @@
-/**
- * Copyright (c) 2014-2016, Digi International Inc. <support@digi.com>
+/*
+ * Copyright (c) 2014-2021, Digi International Inc. <support@digi.com>
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -73,10 +73,10 @@ public class CANSampleActivity extends Activity implements ICANListener, OnClick
 	private Button[] CANReadButtons;
 
 	private CAN[] mCans;
-	private boolean[] mCanReading = new boolean[] {false, false};
+	private final boolean[] mCanReading = new boolean[] {false, false};
 	private CANFrame receivedFrame;
 
-	private IncomingHandler handler = new IncomingHandler(this);
+	private final IncomingHandler handler = new IncomingHandler(this);
 
 	/**
 	 * Handler to manage UI calls from different threads.
@@ -154,63 +154,62 @@ public class CANSampleActivity extends Activity implements ICANListener, OnClick
 
 		// Instantiate the elements from layout.
 		idTxTexts = new EditText[] {
-				(EditText)findViewById(R.id.ID0_tx),
-				(EditText)findViewById(R.id.ID1_tx)};
+				findViewById(R.id.ID0_tx),
+				findViewById(R.id.ID1_tx)};
 
 		extIdTxCheckBoxes = new CheckBox[] {
-				(CheckBox)findViewById(R.id.ExtIDTx0),
-				(CheckBox)findViewById(R.id.ExtIDTx1)};
+				findViewById(R.id.ExtIDTx0),
+				findViewById(R.id.ExtIDTx1)};
 
 		rtrCheckBoxes = new CheckBox[] {
-				(CheckBox)findViewById(R.id.RTR0),
-				(CheckBox)findViewById(R.id.RTR1)};
+				findViewById(R.id.RTR0),
+				findViewById(R.id.RTR1)};
 
 		txFrameLabels = new TextView[] {
-				(TextView)findViewById(R.id.tx0_frame),
-				(TextView)findViewById(R.id.tx1_frame)};
+				findViewById(R.id.tx0_frame),
+				findViewById(R.id.tx1_frame)};
 
 		idRxTexts = new EditText[] {
-				(EditText)findViewById(R.id.ID0_rx),
-				(EditText)findViewById(R.id.ID1_rx)};
+				findViewById(R.id.ID0_rx),
+				findViewById(R.id.ID1_rx)};
 
 		extIdRxCheckBoxes = new CheckBox[] {
-				(CheckBox)findViewById(R.id.ExtIDRx0),
-				(CheckBox)findViewById(R.id.ExtIDRx1)};
+				findViewById(R.id.ExtIDRx0),
+				findViewById(R.id.ExtIDRx1)};
 
 		maskTexts = new EditText[] {
-				(EditText)findViewById(R.id.Mask0),
-				(EditText)findViewById(R.id.Mask1)};
+				findViewById(R.id.Mask0),
+				findViewById(R.id.Mask1)};
 
-		//rx0Bytes = new EditText[8];
 		rx0Bytes = new EditText[] {
-				(EditText)findViewById(R.id.rx0_byte0),
-				(EditText)findViewById(R.id.rx0_byte1),
-				(EditText)findViewById(R.id.rx0_byte2),
-				(EditText)findViewById(R.id.rx0_byte3),
-				(EditText)findViewById(R.id.rx0_byte4),
-				(EditText)findViewById(R.id.rx0_byte5),
-				(EditText)findViewById(R.id.rx0_byte6),
-				(EditText)findViewById(R.id.rx0_byte7)};
+				findViewById(R.id.rx0_byte0),
+				findViewById(R.id.rx0_byte1),
+				findViewById(R.id.rx0_byte2),
+				findViewById(R.id.rx0_byte3),
+				findViewById(R.id.rx0_byte4),
+				findViewById(R.id.rx0_byte5),
+				findViewById(R.id.rx0_byte6),
+				findViewById(R.id.rx0_byte7)};
 
 		rx1Bytes = new EditText[] {
-				(EditText)findViewById(R.id.rx1_byte0),
-				(EditText)findViewById(R.id.rx1_byte1),
-				(EditText)findViewById(R.id.rx1_byte2),
-				(EditText)findViewById(R.id.rx1_byte3),
-				(EditText)findViewById(R.id.rx1_byte4),
-				(EditText)findViewById(R.id.rx1_byte5),
-				(EditText)findViewById(R.id.rx1_byte6),
-				(EditText)findViewById(R.id.rx1_byte7)};
+				findViewById(R.id.rx1_byte0),
+				findViewById(R.id.rx1_byte1),
+				findViewById(R.id.rx1_byte2),
+				findViewById(R.id.rx1_byte3),
+				findViewById(R.id.rx1_byte4),
+				findViewById(R.id.rx1_byte5),
+				findViewById(R.id.rx1_byte6),
+				findViewById(R.id.rx1_byte7)};
 
 		receivedIDLabels = new TextView[] {
-				(TextView)findViewById(R.id.ReceivedID0),
-				(TextView)findViewById(R.id.ReceivedID1)};
+				findViewById(R.id.ReceivedID0),
+				findViewById(R.id.ReceivedID1)};
 
 		CANReadButtons = new Button[] {
-				(Button)findViewById(R.id.rx0_button),
-				(Button)findViewById(R.id.rx1_button)};
+				findViewById(R.id.rx0_button),
+				findViewById(R.id.rx1_button)};
 
-		Button editFrame0Button = (Button) findViewById(R.id.edit_frame0_button);
+		Button editFrame0Button = findViewById(R.id.edit_frame0_button);
 		editFrame0Button.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -219,7 +218,7 @@ public class CANSampleActivity extends Activity implements ICANListener, OnClick
 			}
 		});
 
-		Button editFrame1Button = (Button) findViewById(R.id.edit_frame1_button);
+		Button editFrame1Button = findViewById(R.id.edit_frame1_button);
 		editFrame1Button.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -227,8 +226,8 @@ public class CANSampleActivity extends Activity implements ICANListener, OnClick
 				dialog.show();
 			}
 		});
-		Button can0SendButton = (Button) findViewById(R.id.tx0_button);
-		Button can1SendButton = (Button) findViewById(R.id.tx1_button);
+		Button can0SendButton = findViewById(R.id.tx0_button);
+		Button can1SendButton = findViewById(R.id.tx1_button);
 
 		// Show initial values.
 		for (EditText t: maskTexts)
@@ -302,25 +301,21 @@ public class CANSampleActivity extends Activity implements ICANListener, OnClick
 	@Override
 	public void onClick(View v) {
 		int iNumber;
-		switch (v.getId()) {
-			case R.id.tx0_button:
-				iNumber = 0;
-				handleSendButtonPressed(mCans[iNumber], idTxTexts[iNumber], extIdTxCheckBoxes[iNumber], rtrCheckBoxes[iNumber], txFrameLabels[iNumber].getText().toString());
-				break;
-			case R.id.rx0_button:
-				iNumber = 0;
-				handleReadButtonPressed(mCans[iNumber], idRxTexts[iNumber], extIdRxCheckBoxes[iNumber], maskTexts[iNumber]);
-				break;
-			case R.id.tx1_button:
-				iNumber = 1;
-				handleSendButtonPressed(mCans[iNumber], idTxTexts[iNumber], extIdTxCheckBoxes[iNumber], rtrCheckBoxes[iNumber], txFrameLabels[iNumber].getText().toString());
-				break;
-			case R.id.rx1_button:
-				iNumber = 1;
-				handleReadButtonPressed(mCans[iNumber], idRxTexts[iNumber], extIdRxCheckBoxes[iNumber], maskTexts[iNumber]);
-				break;
-			default:
-				break;
+		int id = v.getId();
+		if (id == R.id.tx0_button) {
+			iNumber = 0;
+			handleSendButtonPressed(mCans[iNumber], idTxTexts[iNumber], extIdTxCheckBoxes[iNumber],
+					rtrCheckBoxes[iNumber], txFrameLabels[iNumber].getText().toString());
+		} else if (id == R.id.rx0_button) {
+			iNumber = 0;
+			handleReadButtonPressed(mCans[iNumber], idRxTexts[iNumber], extIdRxCheckBoxes[iNumber], maskTexts[iNumber]);
+		} else if (id == R.id.tx1_button) {
+			iNumber = 1;
+			handleSendButtonPressed(mCans[iNumber], idTxTexts[iNumber], extIdTxCheckBoxes[iNumber],
+					rtrCheckBoxes[iNumber], txFrameLabels[iNumber].getText().toString());
+		} else if (id == R.id.rx1_button) {
+			iNumber = 1;
+			handleReadButtonPressed(mCans[iNumber], idRxTexts[iNumber], extIdRxCheckBoxes[iNumber], maskTexts[iNumber]);
 		}
 	}
 
