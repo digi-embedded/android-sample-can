@@ -209,25 +209,25 @@ public class CANSampleActivity extends Activity implements ICANListener, OnClick
 				findViewById(R.id.rx0_button),
 				findViewById(R.id.rx1_button)};
 
-		Button editFrame0Button = findViewById(R.id.edit_frame0_button);
-		editFrame0Button.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				CANFrameDialog dialog = new CANFrameDialog(CANSampleActivity.this, txFrameLabels[0].getText().toString(), 0);
-				dialog.show();
-			}
-		});
+		Button[] editButtons = new Button[] {
+				findViewById(R.id.edit_frame0_button),
+				findViewById(R.id.edit_frame1_button)};
 
-		Button editFrame1Button = findViewById(R.id.edit_frame1_button);
-		editFrame1Button.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				CANFrameDialog dialog = new CANFrameDialog(CANSampleActivity.this, txFrameLabels[1].getText().toString(), 1);
-				dialog.show();
-			}
-		});
-		Button can0SendButton = findViewById(R.id.tx0_button);
-		Button can1SendButton = findViewById(R.id.tx1_button);
+		for (int i = 0; i < editButtons.length; i++) {
+			final int ifaceIndex = i;
+			Button b = editButtons[ifaceIndex];
+			b.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					CANFrameDialog dialog = new CANFrameDialog(CANSampleActivity.this, txFrameLabels[ifaceIndex].getText().toString(), ifaceIndex);
+					dialog.show();
+				}
+			});
+		}
+
+		Button[] sendButtons = new Button[] {
+				findViewById(R.id.tx0_button),
+				findViewById(R.id.tx1_button)};
 
 		// Show initial values.
 		for (EditText t: maskTexts)
@@ -240,8 +240,8 @@ public class CANSampleActivity extends Activity implements ICANListener, OnClick
 			l.setText(INIT_TX_FRAME);
 
 		// Set event listeners for layout elements.
-		can0SendButton.setOnClickListener(this);
-		can1SendButton.setOnClickListener(this);
+		for (Button b: sendButtons)
+			b.setOnClickListener(this);
 		for (Button b: CANReadButtons)
 			b.setOnClickListener(this);
 
@@ -249,9 +249,21 @@ public class CANSampleActivity extends Activity implements ICANListener, OnClick
 		CANManager canManager = new CANManager(this);
 
 		// Initialize CAN objects.
-		mCans = new CAN[] {
-				canManager.createCAN(0),
-				canManager.createCAN(1)};
+		int[] interfaces = canManager.listInterfaces();
+		mCans = new CAN[Math.min(interfaces.length, 2)]; // The app supports a maximum of 2 interfaces
+		for (int i = 0; i < interfaces.length; i++) {
+			int ifaceIndex = interfaces[i];
+			mCans[i] = canManager.createCAN(interfaces[ifaceIndex]);
+			idTxTexts[ifaceIndex].setEnabled(true);
+			extIdTxCheckBoxes[ifaceIndex].setEnabled(true);
+			rtrCheckBoxes[ifaceIndex].setEnabled(true);
+			idRxTexts[ifaceIndex].setEnabled(true);
+			extIdRxCheckBoxes[ifaceIndex].setEnabled(true);
+			maskTexts[ifaceIndex].setEnabled(true);
+			CANReadButtons[ifaceIndex].setEnabled(true);
+			editButtons[ifaceIndex].setEnabled(true);
+			sendButtons[ifaceIndex].setEnabled(true);
+		}
 	}
 
 	@Override

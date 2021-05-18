@@ -53,25 +53,28 @@
 
                     <EditText
                         android:id="@+id/ID0_tx"
-                        android:layout_marginEnd="5dp"
                         android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:layout_weight="1"
+                        android:enabled="false"
                         android:inputType="textCapCharacters"
                         android:maxLength="8"
                         android:textSize="14sp" />
 
                     <CheckBox
                         android:id="@+id/ExtIDTx0"
-                        android:layout_marginEnd="0dp"
                         android:layout_marginStart="5dp"
+                        android:layout_marginEnd="0dp"
                         android:layout_weight="1"
+                        android:enabled="false"
                         android:text="@string/ExtID" />
 
                     <CheckBox
                         android:id="@+id/RTR0"
-                        android:layout_marginEnd="0dp"
                         android:layout_marginStart="5dp"
+                        android:layout_marginEnd="0dp"
                         android:layout_weight="1"
+                        android:enabled="false"
                         android:text="@string/RTR" />
                 </TableRow>
             </TableLayout>
@@ -113,6 +116,7 @@
                     android:layout_width="0px"
                     android:layout_height="wrap_content"
                     android:layout_weight="20"
+                    android:enabled="false"
                     android:text="@string/edit" />
             </LinearLayout>
 
@@ -120,9 +124,10 @@
                 android:id="@+id/tx0_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:enabled="false"
                 android:text="@string/tx_button" />
         </LinearLayout>
 
@@ -145,17 +150,18 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
                         android:layout_marginStart="0dp"
+                        android:layout_marginEnd="5dp"
                         android:labelFor="@+id/ID0_rx"
                         android:text="@string/ID"
                         android:textColor="@color/white" />
 
                     <EditText
                         android:id="@+id/ID0_rx"
-                        android:layout_marginEnd="5dp"
                         android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:layout_weight="1"
+                        android:enabled="false"
                         android:inputType="textCapCharacters"
                         android:maxLength="8"
                         android:textColor="@drawable/edittext"
@@ -163,9 +169,10 @@
 
                     <CheckBox
                         android:id="@+id/ExtIDRx0"
-                        android:layout_marginEnd="0dp"
                         android:layout_marginStart="5dp"
+                        android:layout_marginEnd="0dp"
                         android:layout_weight="1"
+                        android:enabled="false"
                         android:text="@string/ExtID" />
 
                     <TextView
@@ -179,9 +186,10 @@
 
                     <EditText
                         android:id="@+id/Mask0"
-                        android:layout_marginEnd="5dp"
                         android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:layout_weight="1"
+                        android:enabled="false"
                         android:inputType="textCapCharacters"
                         android:maxLength="8"
                         android:textColor="@drawable/edittext"
@@ -335,9 +343,10 @@
                 android:id="@+id/rx0_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:enabled="false"
                 android:text="@string/rx_button" />
 
         </LinearLayout>
@@ -383,33 +392,36 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
                         android:layout_marginStart="0dp"
+                        android:layout_marginEnd="5dp"
                         android:labelFor="@+id/ID1_tx"
                         android:text="@string/ID"
                         android:textColor="@color/white" />
 
                     <EditText
                         android:id="@+id/ID1_tx"
-                        android:layout_marginEnd="5dp"
                         android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:layout_weight="1"
+                        android:enabled="false"
                         android:inputType="textCapCharacters"
                         android:maxLength="8"
                         android:textSize="14sp" />
 
                     <CheckBox
                         android:id="@+id/ExtIDTx1"
-                        android:layout_marginEnd="0dp"
                         android:layout_marginStart="5dp"
+                        android:layout_marginEnd="0dp"
                         android:layout_weight="1"
+                        android:enabled="false"
                         android:text="@string/ExtID" />
 
                     <CheckBox
                         android:id="@+id/RTR1"
-                        android:layout_marginEnd="0dp"
                         android:layout_marginStart="5dp"
+                        android:layout_marginEnd="0dp"
                         android:layout_weight="1"
+                        android:enabled="false"
                         android:text="@string/RTR" />
                 </TableRow>
             </TableLayout>
@@ -421,8 +433,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_weight="1"
                     android:text="@string/data"
                     android:textColor="@color/white"
@@ -439,8 +451,8 @@
                     android:layout_width="0px"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:layout_marginEnd="7dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginEnd="7dp"
                     android:layout_weight="80"
                     android:gravity="center|bottom"
                     android:textColor="@color/white"
@@ -451,6 +463,7 @@
                     android:layout_width="0px"
                     android:layout_height="wrap_content"
                     android:layout_weight="20"
+                    android:enabled="false"
                     android:text="@string/edit" />
             </LinearLayout>
 
@@ -458,9 +471,10 @@
                 android:id="@+id/tx1_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:enabled="false"
                 android:text="@string/tx_button" />
         </LinearLayout>
 
@@ -483,17 +497,19 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
                         android:layout_marginStart="0dp"
+                        android:layout_marginEnd="5dp"
                         android:labelFor="@+id/ID1_rx"
                         android:text="@string/ID"
                         android:textColor="@color/white" />
 
                     <EditText
                         android:id="@+id/ID1_rx"
-                        android:layout_marginEnd="5dp"
+                        android:layout_width="40dp"
                         android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:layout_weight="1"
+                        android:enabled="false"
                         android:inputType="textCapCharacters"
                         android:maxLength="8"
                         android:textColor="@drawable/edittext"
@@ -501,25 +517,27 @@
 
                     <CheckBox
                         android:id="@+id/ExtIDRx1"
-                        android:layout_marginEnd="0dp"
                         android:layout_marginStart="5dp"
+                        android:layout_marginEnd="0dp"
                         android:layout_weight="1"
+                        android:enabled="false"
                         android:text="@string/ExtID" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
                         android:layout_marginStart="0dp"
+                        android:layout_marginEnd="5dp"
                         android:labelFor="@+id/Mask1"
                         android:text="@string/Mask"
                         android:textColor="@color/white" />
 
                     <EditText
                         android:id="@+id/Mask1"
-                        android:layout_marginEnd="5dp"
                         android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:layout_weight="1"
+                        android:enabled="false"
                         android:inputType="textCapCharacters"
                         android:maxLength="8"
                         android:textColor="@drawable/edittext"
@@ -536,8 +554,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
                         android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
                         android:layout_weight="1"
                         android:text="@string/data"
                         android:textColor="@color/white"
@@ -553,8 +571,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="0dp"
                             android:layout_marginStart="10dp"
+                            android:layout_marginEnd="0dp"
                             android:layout_weight="1"
                             android:text="@string/receivedID"
                             android:textColor="@color/white" />
@@ -563,8 +581,8 @@
                             android:id="@+id/ReceivedID1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="10dp"
                             android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
                             android:layout_weight="1"
                             android:text="@string/nullID"
                             android:textColor="@color/white"
@@ -581,8 +599,8 @@
 
                     <EditText
                         android:id="@+id/rx1_byte0"
-                        android:layout_marginEnd="0dp"
                         android:layout_marginStart="5dp"
+                        android:layout_marginEnd="0dp"
                         android:layout_weight="1"
                         android:enabled="false"
                         android:inputType="textCapCharacters"
@@ -592,8 +610,8 @@
 
                     <EditText
                         android:id="@+id/rx1_byte1"
-                        android:layout_marginEnd="0dp"
                         android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
                         android:layout_weight="1"
                         android:enabled="false"
                         android:inputType="textCapCharacters"
@@ -603,8 +621,8 @@
 
                     <EditText
                         android:id="@+id/rx1_byte2"
-                        android:layout_marginEnd="0dp"
                         android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
                         android:layout_weight="1"
                         android:enabled="false"
                         android:inputType="textCapCharacters"
@@ -614,8 +632,8 @@
 
                     <EditText
                         android:id="@+id/rx1_byte3"
-                        android:layout_marginEnd="0dp"
                         android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
                         android:layout_weight="1"
                         android:enabled="false"
                         android:inputType="textCapCharacters"
@@ -625,8 +643,8 @@
 
                     <EditText
                         android:id="@+id/rx1_byte4"
-                        android:layout_marginEnd="0dp"
                         android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
                         android:layout_weight="1"
                         android:enabled="false"
                         android:inputType="textCapCharacters"
@@ -636,8 +654,8 @@
 
                     <EditText
                         android:id="@+id/rx1_byte5"
-                        android:layout_marginEnd="0dp"
                         android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
                         android:layout_weight="1"
                         android:enabled="false"
                         android:inputType="textCapCharacters"
@@ -647,8 +665,8 @@
 
                     <EditText
                         android:id="@+id/rx1_byte6"
-                        android:layout_marginEnd="0dp"
                         android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
                         android:layout_weight="1"
                         android:enabled="false"
                         android:inputType="textCapCharacters"
@@ -658,8 +676,8 @@
 
                     <EditText
                         android:id="@+id/rx1_byte7"
-                        android:layout_marginEnd="5dp"
                         android:layout_marginStart="0dp"
+                        android:layout_marginEnd="5dp"
                         android:layout_weight="1"
                         android:enabled="false"
                         android:inputType="textCapCharacters"
@@ -673,9 +691,10 @@
                 android:id="@+id/rx1_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:enabled="false"
                 android:text="@string/rx_button" />
         </LinearLayout>
     </LinearLayout>

@@ -1,7 +1,7 @@
 CAN Sample Application
 ======================
 
-This application demonstrates the usage of the CAN API by monitoring the 
+This application demonstrates the usage of the CAN API by monitoring the
 communications in the two CAN interfaces while allowing the user to configure
 some parameters related to transmission and reception.
 
@@ -10,11 +10,11 @@ Demo requirements
 
 To run this example you need:
 
-* One compatible device to host the application.
-* A USB connection between the device and the host PC in order to transfer and
+* A compatible development board to host the application.
+* A USB connection between the board and the host PC in order to transfer and
   launch the application.
-* CAN cable to connect the Digi device to a CAN device or host PC with a 
-  CAN protocol interpreter. Alternatively, the two CAN ports in the device 
+* CAN cable to connect the development board to a CAN device or host PC with a
+  CAN protocol interpreter. Alternatively, the two CAN ports in the device
   could be connected together to run this sample application.
 
 Demo setup
@@ -22,8 +22,8 @@ Demo setup
 
 Make sure the hardware is set up correctly:
 
-1. The device is powered on.
-2. The device is connected directly to the PC by the micro USB cable.
+1. The development board is powered on.
+2. The board is connected directly to the PC by the micro USB cable.
 3. The CAN interfaces are properly connected.
 
 Demo run
@@ -40,8 +40,8 @@ separated.
 Transmission allows setting the device ID and the 8-byte data to send.
 Click **SEND DATA** to start the transmission of the CAN frame.
 
-Reception allows the configuration of the device ID. Click **READ DATA**  
-to wait for the reception of a CAN frame with a matching ID. Click the button 
+Reception allows the configuration of the device ID. Click **READ DATA**
+to wait for the reception of a CAN frame with a matching ID. Click the button
 again to stop this listening process.
 
 Compatible with
