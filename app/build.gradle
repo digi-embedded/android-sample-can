@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 android {
     compileSdkVersion 'Digi International:Digi SDK Add-On for Embedded:28'
-    buildToolsVersion '29.0.2'
+    buildToolsVersion '30.0.3'
     
     defaultConfig {
         applicationId 'com.digi.android.sample.can'
