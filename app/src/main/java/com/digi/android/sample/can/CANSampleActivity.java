@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2021, Digi International Inc. <support@digi.com>
+ * Copyright (c) 2014-2025, Digi International Inc. <support@digi.com>
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -32,6 +33,8 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.EditText;
+
+import androidx.annotation.NonNull;
 
 import com.digi.android.can.CAN;
 import com.digi.android.can.CANFilter;
@@ -85,11 +88,12 @@ public class CANSampleActivity extends Activity implements ICANListener, OnClick
 		private final WeakReference<CANSampleActivity> wActivity;
 
 		IncomingHandler(CANSampleActivity activity) {
+			super(Looper.getMainLooper());
 			wActivity = new WeakReference<>(activity);
 		}
 
 		@Override
-		public void handleMessage(Message msg) {
+		public void handleMessage(@NonNull Message msg) {
 			super.handleMessage(msg);
 			CANSampleActivity activity = wActivity.get();
 
@@ -97,7 +101,7 @@ public class CANSampleActivity extends Activity implements ICANListener, OnClick
 				return;
 
 			switch (msg.what) {
-				case ACTION_DRAW_FRAME:
+				case ACTION_DRAW_FRAME: {
 					// Check which interface is the owner of the received frame
 					// (bear in mind that both interfaces might have set the same ID).
 					// Besides, when checking the frame's ID, it's necessary to
@@ -130,14 +134,17 @@ public class CANSampleActivity extends Activity implements ICANListener, OnClick
 						activity.receivedIDLabels[interfaceNumber].setText(Integer.toHexString(id.getValue()));
 					}
 					break;
-				case ACTION_UPDATE_CAN0_FRAME:
+				}
+				case ACTION_UPDATE_CAN0_FRAME: {
 					String frame = msg.getData().getString(TAG_FRAME);
 					activity.txFrameLabels[0].setText(frame);
 					break;
-				case ACTION_UPDATE_CAN1_FRAME:
-					frame = msg.getData().getString(TAG_FRAME);
+				}
+				case ACTION_UPDATE_CAN1_FRAME: {
+					String frame = msg.getData().getString(TAG_FRAME);
 					activity.txFrameLabels[1].setText(frame);
 					break;
+				}
 				default:
 					break;
 			}
@@ -216,12 +223,10 @@ public class CANSampleActivity extends Activity implements ICANListener, OnClick
 		for (int i = 0; i < editButtons.length; i++) {
 			final int ifaceIndex = i;
 			Button b = editButtons[ifaceIndex];
-			b.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					CANFrameDialog dialog = new CANFrameDialog(CANSampleActivity.this, txFrameLabels[ifaceIndex].getText().toString(), ifaceIndex);
-					dialog.show();
-				}
+			b.setOnClickListener(v -> {
+				CANFrameDialog dialog = new CANFrameDialog(
+						CANSampleActivity.this, txFrameLabels[ifaceIndex].getText().toString(), ifaceIndex);
+				dialog.show();
 			});
 		}
 

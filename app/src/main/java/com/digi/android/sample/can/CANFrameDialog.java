@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2021, Digi International Inc. <support@digi.com>
+ * Copyright (c) 2014-2025, Digi International Inc. <support@digi.com>
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -22,7 +22,6 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -101,21 +100,13 @@ public class CANFrameDialog extends Dialog implements TextWatcher {
 			t.addTextChangedListener(this);
 
 		okButton = findViewById(R.id.ok_button);
-		okButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				sampleActivity.updateCANFrame(data, interfaceNumber);
-				dismiss();
-			}
+		okButton.setOnClickListener(v -> {
+			sampleActivity.updateCANFrame(data, interfaceNumber);
+			dismiss();
 		});
 
 		Button cancelButton = findViewById(R.id.cancel_button);
-		cancelButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
-		});
+		cancelButton.setOnClickListener(v -> dismiss());
 	}
 
 	/**
